@@ -19,8 +19,8 @@ const Home = () => {
   const featuredProducts = [
     {
       id: 1,
-      name: "Classic White Tee",
-      price: 29.99,
+      name: "Classic White T-Shirt",
+      price: 1800,
       image:
         "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
       category: "T-Shirts",
@@ -28,7 +28,7 @@ const Home = () => {
     {
       id: 2,
       name: "Slim Fit Jeans",
-      price: 59.99,
+      price: 3000,
       image:
         "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
       category: "Jeans",
@@ -36,19 +36,16 @@ const Home = () => {
     {
       id: 3,
       name: "Summer Dress",
-      price: 49.99,
+      price: 2500,
       image:
         "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
       category: "Dresses",
     },
   ];
 
-  const newArrivals = [
-    // Add more products for the new arrivals section
-  ];
+  const newArrivals = [];
 
   useEffect(() => {
-    // Scroll to top on mount
     window.scrollTo(0, 0);
   }, []);
 
@@ -88,7 +85,6 @@ const Home = () => {
           </motion.div>
         </div>
       </motion.section>
-
       {/* Animated Categories Section */}
       <section className="categories-section">
         <motion.h2
@@ -128,8 +124,6 @@ const Home = () => {
           ))}
         </div>
       </section>
-
-      {/* Featured Products with Parallax Background */}
       <section className="featured-section parallax-bg">
         <div className="parallax-overlay"></div>
         <div className="section-content">
@@ -142,6 +136,16 @@ const Home = () => {
           >
             Featured Collection
           </motion.h2>
+          <motion.p
+            className="section-subtitle"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Curated selections of our most popular items
+          </motion.p>
+
           <div className="products-grid">
             {featuredProducts.map((product, index) => (
               <motion.div
@@ -153,16 +157,62 @@ const Home = () => {
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 whileHover={{ y: -10 }}
               >
-                {/* ... product card content ... */}
+                <div className="product-image-container">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="product-image"
+                  />
+                  <motion.button
+                    className="quick-view-btn"
+                    whileHover={{ backgroundColor: "#e94560" }}
+                  >
+                    Quick View
+                  </motion.button>
+                  {product.isNew && <div className="new-badge">New</div>}
+                  {product.discount && (
+                    <div className="discount-badge">-{product.discount}%</div>
+                  )}
+                </div>
+                <div className="product-info">
+                  <span className="product-category">{product.category}</span>
+                  <h3 className="product-name">{product.name}</h3>
+                  <div className="price-container">
+                    {product.originalPrice && (
+                      <span className="original-price">
+                        {product.originalPrice.toFixed(0)}
+                      </span>
+                    )}
+                    <span className="current-price">
+                      NRP. {product.price.toFixed(0)}
+                    </span>
+                  </div>
+                  <motion.button
+                    className="add-to-cart-btn"
+                    whileHover={{
+                      backgroundColor: "#e94560",
+                      boxShadow: "0 5px 15px rgba(233, 69, 96, 0.4)",
+                    }}
+                  >
+                    Add to Cart
+                  </motion.button>
+                </div>
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* New Arrivals Section */}
-      <section className="new-arrivals">
-        {/* ... similar structure with animations ... */}
+          <motion.div
+            className="view-all-container"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <Link to="/products" className="view-all-link">
+              View All Products <span className="arrow">→</span>
+            </Link>
+          </motion.div>
+        </div>
       </section>
 
       {/* Summer Collection Banner */}
@@ -196,30 +246,28 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <Link to="/products/summer" className="cta-button">
+            <Link to="/products/summer" className="cta-button summer-cta">
               Explore Collection
+              <motion.span
+                className="arrow"
+                initial={{ x: 0 }}
+                whileHover={{ x: 5 }}
+                transition={{ duration: 0.3 }}
+              >
+                →
+              </motion.span>
             </Link>
           </motion.div>
         </div>
         <div className="summer-image">
-          <img src={summerCollection} alt="Summer Collection" />
+          <img
+            src={summerCollection}
+            alt="Summer Collection"
+            className="summer-img"
+          />
+          <div className="summer-overlay"></div>
         </div>
       </motion.section>
-
-      {/* Testimonials */}
-      <section className="testimonials">
-        {/* ... testimonial cards with animations ... */}
-      </section>
-
-      {/* Newsletter with Gradient Background */}
-      <motion.section
-        className="newsletter-section gradient-bg"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      />
-      {/* ... newsletter form ... */}
     </div>
   );
 };

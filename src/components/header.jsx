@@ -1,31 +1,58 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa";
 import "../style/header.css";
-<link
-  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;500;600&display=swap"
-  rel="stylesheet"
-></link>;
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="header">
+    <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <div className="container">
         <div className="logo">वसः</div>
-        <nav className="nav">
-          <a href="#" className="nav-link">
+
+        <nav className={`nav ${menuOpen ? "active" : ""}`}>
+          <Link to="/" className="nav-link" onClick={() => setMenuOpen(false)}>
             Home
-          </a>
-          <a href="#" className="nav-link">
-            Collections
-          </a>
-          <a href="#" className="nav-link">
+          </Link>
+          <Link
+            to="/products"
+            className="nav-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            Products
+          </Link>
+          <Link
+            to="/about"
+            className="nav-link"
+            onClick={() => setMenuOpen(false)}
+          >
             About
-          </a>
-          <a href="#" className="nav-link">
+          </Link>
+          <Link
+            to="/contact"
+            className="nav-link"
+            onClick={() => setMenuOpen(false)}
+          >
             Contact
-          </a>
+          </Link>
         </nav>
+
         <div className="header-actions">
-          <button className="search-btn">🔍</button>
-          <button className="cart-btn">🛍️</button>
+          <button
+            className="menu-toggle"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? <FaTimes /> : <FaBars />}
+          </button>
         </div>
       </div>
     </header>

@@ -1,23 +1,30 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: "Inter", sans-serif;
+  background-color: #f8f9fa;
 }
+
 .header {
-  height: 80px;
+  height: 100px;
   margin-top: 0;
-  background-color: #1a1a2e;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  background-color: black;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
   z-index: 1000;
   padding: 0.8rem 0;
-  transition: all 0.3s ease;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .header.scrolled {
-  padding: 0.6rem 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  height: 80px;
+  padding: 0.5rem 0;
+  background-color: black;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
 }
 
 .container {
@@ -29,101 +36,110 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1.5rem;
-}
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  padding: 0.5rem;
-  cursor: pointer;
-  z-index: 1001;
+  height: 100%;
 }
 
+/* Golden Logo Enhancement */
 .logo {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #ffffff;
+  font-family: "Noto Sans Devanagari", "Poppins", sans-serif;
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: transparent;
+  background: linear-gradient(135deg, #ffd700 0%, #daa520 50%, #b8860b 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 0 0 10px rgba(218, 165, 32, 0.6), 0 0 20px rgba(255, 215, 0, 0.3);
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  transition: all 0.4s ease;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: "Montserrat", sans-serif;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  padding: 0 10px;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3));
+  z-index: 2;
 }
 
 .logo:hover {
-  color: #e94560;
+  transform: translateY(-3px) scale(1.05);
+  text-shadow: 0 0 15px rgba(218, 165, 32, 0.8), 0 0 25px rgba(255, 215, 0, 0.5);
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.4));
 }
 
+/* Navigation Styles */
 .nav {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.8rem;
   align-items: center;
 }
 
 .nav-link {
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: relative;
-  font-family: "Inter", sans-serif;
-  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Poppins", sans-serif;
 }
 
 .nav-link::before {
   content: "";
   position: absolute;
-  bottom: -2px;
-  left: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background-color: #e94560;
+  background: rgba(255, 255, 255, 0.8);
   transition: width 0.3s ease;
 }
 
 .nav-link:hover::before {
-  width: 100%;
+  width: 60%;
 }
 
 .nav-link:hover {
   color: #fff;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .nav-link.active {
-  color: #e94560;
-  font-weight: 600;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
 }
 
+/* Action Buttons */
 .header-actions {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
   align-items: center;
 }
 
 .action-btn {
-  background-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   border: none;
   color: #ffffff;
-  padding: 0.7rem;
-  border-radius: 8px;
+  padding: 0.8rem;
+  border-radius: 50%;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   transition: all 0.3s ease;
-  width: 42px;
-  height: 42px;
+  backdrop-filter: blur(5px);
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .action-btn:hover {
-  background-color: rgba(233, 69, 96, 0.2);
-  color: #e94560;
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
 }
 
 .action-btn .badge {
@@ -133,38 +149,65 @@ body {
   background: #e94560;
   color: white;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   font-weight: bold;
 }
 
-/* Mobile menu styles */
+/* Mobile Menu */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.menu-toggle:hover {
+  color: #e94560;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .nav {
+    gap: 1rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
 @media (max-width: 768px) {
   .menu-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
   }
 
   .nav {
     position: fixed;
-    top: 70px;
+    top: 80px;
     left: 0;
     width: 100%;
-    background-color: #1a1a2e;
+    background: linear-gradient(135deg, #1a1a2e 0%, #2a3a5e 100%);
     flex-direction: column;
     align-items: center;
-    padding: 1.5rem 0;
+    padding: 2rem 0;
     gap: 1.5rem;
     clip-path: circle(0px at 90% -10%);
-    transition: all 0.6s ease-out;
+    transition: all 0.8s ease-out;
     pointer-events: none;
-    z-index: 1000;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .nav.active {
@@ -175,12 +218,48 @@ body {
   .nav-link {
     width: 80%;
     text-align: center;
-    padding: 0.8rem;
+    padding: 1rem;
     font-size: 1.1rem;
   }
 
   .header-actions {
     margin-left: auto;
-    margin-right: 1rem;
   }
+
+  .logo {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .action-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Floating Animation for Logo */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.logo:hover {
+  animation: float 3s ease-in-out infinite;
 }
