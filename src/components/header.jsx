@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { BrowserRouter, Link, Navigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "../style/header.css";
+import Products from "../assets/pages/Products";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,7 +18,10 @@ const Header = () => {
   return (
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <div className="container">
-        <div className="logo">वसः</div>
+        <div className="logo">
+          वसः
+          <Link to="/" className="nav-link"></Link>
+        </div>
 
         <nav className={`nav ${menuOpen ? "active" : ""}`}>
           <Link to="/" className="nav-link" onClick={() => setMenuOpen(false)}>
@@ -26,7 +30,7 @@ const Header = () => {
           <Link
             to="/products"
             className="nav-link"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => Navigate("/products")}
           >
             Products
           </Link>
