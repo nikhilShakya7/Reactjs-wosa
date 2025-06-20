@@ -6,6 +6,7 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import Header from "./components/header";
+import Contact from "./assets/pages/contact";
 import Home from "./assets/pages/home";
 import ReactDOM from "react-dom/client";
 import Products from "./assets/pages/Products";
@@ -17,6 +18,7 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
 
           <Route path="/products" element={<Products />} />
         </Routes>

@@ -43,7 +43,7 @@ const Footer = () => {
       >
         {/* About Section */}
         <motion.div className="footer-section" variants={itemVariants}>
-          <h3 className="footer-heading">FashionStore</h3>
+          <h3 className="footer-heading">वसः</h3>
           <p className="footer-text">
             Bringing you the latest trends and timeless classics since 2015.
             We're committed to sustainable fashion and exceptional quality.
@@ -88,7 +88,7 @@ const Footer = () => {
               <a href="#">Home</a>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <a href="#">Shop</a>
+              <a href="products">Shop</a>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
               <a href="#">About Us</a>
@@ -100,7 +100,7 @@ const Footer = () => {
               <a href="#">Blog</a>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <a href="#">Contact</a>
+              <a href="contact">Contact</a>
             </motion.li>
           </ul>
         </motion.div>
