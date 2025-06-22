@@ -30,7 +30,7 @@ const Header = () => {
           <Link
             to="/products"
             className="nav-link"
-            onClick={() => Navigate("/products")}
+            onClick={() => setMenuOpen(false)}
           >
             Products
           </Link>

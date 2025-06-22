@@ -44,8 +44,6 @@ const Home = () => {
     },
   ];
 
-  const newArrivals = [];
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

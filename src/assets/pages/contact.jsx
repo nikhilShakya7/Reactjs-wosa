@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from "react-icons/fa";
 //import Header from "../../components/header";
 //import Footer from "../../components/footer";
@@ -22,24 +23,34 @@ const Contact = () => {
       [name]: value,
     }));
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      console.log("Form submitted:", formData);
-      setIsSubmitting(false);
-      setSubmitStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-
-      setTimeout(() => setSubmitStatus(null), 5000);
-    }, 1500);
+    emailjs
+      .send(
+        "service_6yofzip",
+        "template_fk5h9f7",
+        formData,
+        "OUct0zR11leVWOEH-"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setSubmitStatus("success");
+          setFormData({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+          });
+        },
+        (error) => {
+          console.log(error.text);
+          setSubmitStatus("error");
+        }
+      )
+      .finally(() => setIsSubmitting(false));
   };
 
   return (
