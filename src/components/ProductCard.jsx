@@ -2,7 +2,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import "../style/productCard.css";
+import { useCart } from "./cartContext";
+
 const ProductCard = ({ product, ...motionProps }) => {
+  const { addToCart } = useCart();
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    addToCart(product);
+  };
   return (
     <motion.div
       className="product-card"
@@ -51,7 +59,9 @@ const ProductCard = ({ product, ...motionProps }) => {
         </div>
       </Link>
 
-      <button className="add-to-cart">Add to Cart</button>
+      <button className="add-to-cart" onClick={handleAddToCart}>
+        Add to Cart
+      </button>
     </motion.div>
   );
 };

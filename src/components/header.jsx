@@ -2,8 +2,12 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Link, Navigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "../style/header.css";
+import { FaShoppingCart } from "react-icons/fa";
+
+import { useCart } from "./cartContext";
 import Products from "../assets/pages/Products";
 const Header = () => {
+  const { totalItems = 0 } = useCart() || {};
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -22,6 +26,10 @@ const Header = () => {
           वसः
           <Link to="/" className="nav-link"></Link>
         </div>
+        <Link to="/cart" className="cart-link">
+          <FaShoppingCart className="cart-icon" />
+          {totalItems > 0 && <span className="cart-count">{totalItems}</span>}
+        </Link>
 
         <nav className={`nav ${menuOpen ? "active" : ""}`}>
           <Link to="/" className="nav-link" onClick={() => setMenuOpen(false)}>

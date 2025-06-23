@@ -313,17 +313,18 @@
 
 .add-to-cart {
   width: 100%;
-  padding: 12px;
-  background: #1a1a2e;
+  padding: 10px;
+  background-color: #2d3748;
   color: white;
   border: none;
-  font-weight: 600;
+  border-radius: 4px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  margin-top: 10px;
+  transition: background-color 0.3s;
 }
 
 .add-to-cart:hover {
-  background: #e94560;
+  background-color: #4a5568;
 }
 
 .no-results {

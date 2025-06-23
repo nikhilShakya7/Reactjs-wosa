@@ -14,22 +14,26 @@ import Blog from "./assets/pages/blog";
 import Products from "./assets/pages/Products";
 import Footer from "./components/footer";
 import FAQ from "./assets/pages/faq";
+import Cart from "./assets/pages/cart";
+import { CartProvider } from "./components/cartContext";
 const App = () => {
   return (
     <div>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/faq" element={<FAQ />} />
-
-          <Route path="/products" element={<Products />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/products" element={<Products />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </CartProvider>
     </div>
   );
 };

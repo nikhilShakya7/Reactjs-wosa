@@ -1,12 +1,9 @@
-/* Products.css - Responsive Version */
-
 /* Base Styles (Mobile First) */
 .products-page {
   min-height: 100vh;
   background-color: #f8f9fa;
-  padding-top: 80px; /* Space for fixed header */
+  padding-top: 80px;
 }
-
 /* Hero Banner */
 .products-hero {
   position: relative;
@@ -70,7 +67,7 @@
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07);
-  order: 2; /* Move filters below products on mobile */
+  order: 2;
 }
 
 .filter-section {
