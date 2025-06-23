@@ -22,10 +22,7 @@ const Header = () => {
   return (
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <div className="container">
-        <div className="logo">
-          वसः
-          <Link to="/" className="nav-link"></Link>
-        </div>
+        <div className="logo">वसः</div>
         <Link to="/cart" className="cart-link">
           <FaShoppingCart className="cart-icon" />
           {totalItems > 0 && <span className="cart-count">{totalItems}</span>}

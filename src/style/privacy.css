@@ -1,0 +1,144 @@
+/* PrivacyPolicy.css */
+.privacy-container {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  color: #2d3748;
+}
+
+.privacy-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.privacy-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffd700 0%, #daa520 50%, #b8860b 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.last-updated {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.privacy-content {
+  background: white;
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.policy-section {
+  margin-bottom: 2.5rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  color: #1e293b;
+}
+
+.title-decoration {
+  display: inline-block;
+  width: 8px;
+  height: 24px;
+  background: linear-gradient(to bottom, #ffd700, #daa520);
+  margin-right: 12px;
+  border-radius: 4px;
+}
+
+.policy-list {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.policy-list li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  list-style-type: none;
+}
+
+.policy-list li::before {
+  content: "•";
+  color: #daa520;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.contactInfo {
+  padding: 1.2rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.contactInfo p {
+  margin-bottom: 0.5rem;
+}
+
+.policy-footer {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.home-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+  background: #f1f5f9;
+  color: #334155;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.home-link:hover {
+  background: #e2e8f0;
+  transform: translateX(-5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .privacy-container {
+    padding: 0 1rem;
+  }
+
+  .privacy-content {
+    padding: 2rem;
+  }
+
+  .privacy-header h1 {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.privacy-content {
+  animation: fadeIn 0.6s ease-out;
+}

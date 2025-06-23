@@ -125,7 +125,7 @@ const Footer = () => {
               <a href="#">Payment Methods</a>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <a href="#">Privacy Policy</a>
+              <a href="privacy">Privacy Policy</a>
             </motion.li>
           </ul>
         </motion.div>
