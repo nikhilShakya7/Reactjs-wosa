@@ -53,21 +53,21 @@
 }
 
 /* Contact Info */
-.contact-info {
+.contact {
   background: white;
   padding: 2.5rem;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.contact-info h2 {
+.contact h2 {
   color: #1a1a2e;
   font-size: 2rem;
   margin-bottom: 1.5rem;
   position: relative;
 }
 
-.contact-info h2::after {
+.contact h2::after {
   content: "";
   position: absolute;
   bottom: -10px;

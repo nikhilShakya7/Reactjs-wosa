@@ -85,7 +85,7 @@ const Contact = () => {
       <div className="contact-container">
         {/* Contact Info */}
         <motion.div
-          className="contact-info"
+          className="contact"
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
