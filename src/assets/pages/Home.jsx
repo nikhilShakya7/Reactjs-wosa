@@ -237,7 +237,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Fresh styles for sunny days
+            Fresh styles for sunny days.
           </motion.p>
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
