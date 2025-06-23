@@ -13,6 +13,7 @@ import About from "./assets/pages/about";
 import Blog from "./assets/pages/blog";
 import Products from "./assets/pages/Products";
 import Footer from "./components/footer";
+import FAQ from "./assets/pages/faq";
 const App = () => {
   return (
     <div>
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/faq" element={<FAQ />} />
 
           <Route path="/products" element={<Products />} />
         </Routes>

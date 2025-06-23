@@ -110,7 +110,7 @@ const Footer = () => {
           <h3 className="footer-heading">Customer Service</h3>
           <ul className="footer-links">
             <motion.li whileHover={{ x: 5 }}>
-              <a href="#">FAQs</a>
+              <a href="faq">FAQs</a>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
               <a href="#">Shipping Policy</a>
