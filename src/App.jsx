@@ -12,7 +12,6 @@ import Contact from "./assets/pages/contact";
 import ReactDOM from "react-dom/client";
 import About from "./assets/pages/about";
 import Blog from "./assets/pages/blog";
-import Products from "./assets/pages/Products";
 import Footer from "./components/footer";
 import FAQ from "./assets/pages/faq";
 import Home from "./assets/pages/home";
@@ -47,7 +46,6 @@ const App = () => {
               <Route path="/blog" element={<Blog />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/cart" element={<Cart />} />
-              <Route path="/Products" element={<Products />} />
               <Route path="/checkout" element={<CheckoutPage />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
 
