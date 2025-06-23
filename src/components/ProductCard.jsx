@@ -41,7 +41,7 @@ const ProductCard = ({ product, ...motionProps }) => {
                 </span>
               )}
               <span className="current-price">
-                Rs {product.price.toFixed(2)}
+                Rs {product.price.toFixed(0)}
               </span>
             </div>
             {product.rating && (

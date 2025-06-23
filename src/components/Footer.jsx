@@ -85,19 +85,19 @@ const Footer = () => {
           <h3 className="footer-heading">Quick Links</h3>
           <ul className="footer-links">
             <motion.li whileHover={{ x: 5 }}>
-              <a href="#">Home</a>
+              <a href="/">Home</a>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
               <a href="products">Shop</a>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <a href="#">About Us</a>
+              <a href="about">About Us</a>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
               <a href="#">Collections</a>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <a href="#">Blog</a>
+              <a href="blog">Blog</a>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
               <a href="contact">Contact</a>
