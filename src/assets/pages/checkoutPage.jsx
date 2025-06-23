@@ -30,7 +30,7 @@ const CheckoutPage = () => {
       const result = await checkout(formData);
 
       if (result.success) {
-        navigate("/order-confirmation");
+        navigate("/orderConfirmation");
       } else {
         setError(result.error || "Checkout failed. Please try again.");
       }
@@ -64,6 +64,16 @@ const CheckoutPage = () => {
               type="text"
               name="name"
               value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Phone Number</label>
+            <input
+              type="number"
+              name="number"
+              value={formData.number}
               onChange={handleChange}
               required
             />

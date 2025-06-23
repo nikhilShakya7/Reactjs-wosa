@@ -17,6 +17,7 @@ import FAQ from "./assets/pages/faq";
 import Cart from "./assets/pages/cart";
 import { CartProvider } from "./components/cartContext";
 import CheckoutPage from "./assets/pages/checkoutPage";
+import OrderConfirmation from "./assets/pages/orderConfirmatio";
 const App = () => {
   return (
     <div>
@@ -32,6 +33,7 @@ const App = () => {
             <Route path="/cart" element={<Cart />} />
             <Route path="/products" element={<Products />} />
             <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/orderConfirmation" element={<OrderConfirmation />} />
           </Routes>
           <Footer />
         </BrowserRouter>
