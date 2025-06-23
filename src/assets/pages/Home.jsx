@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import products from "./Products";
+import Product from "./product";
 import "../../style/home.css";
 const heroImage =
   "https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80";
@@ -78,7 +78,7 @@ const Home = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.9, duration: 0.5 }}
           >
-            <Link to="/products" className="cta-button pulse-animate">
+            <Link to="/product" className="cta-button pulse-animate">
               Shop Now
             </Link>
           </motion.div>
@@ -109,7 +109,7 @@ const Home = () => {
               transition={{ delay: index * 0.2, duration: 0.6 }}
             >
               <Link
-                to={`/products/${category.name.toLowerCase()}`}
+                to={`/product/${category.name.toLowerCase()}`}
                 className="category-card"
                 style={{
                   backgroundImage: `url(${category.image})`,
@@ -207,7 +207,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Link to="/products" className="view-all-link">
+            <Link to="/product" className="view-all-link">
               View All Products <span className="arrow">→</span>
             </Link>
           </motion.div>

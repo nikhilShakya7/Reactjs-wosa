@@ -3,9 +3,8 @@ import { BrowserRouter, Link, Navigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "../style/header.css";
 import { FaShoppingCart } from "react-icons/fa";
-
+import Product from "../assets/pages/product";
 import { useCart } from "./cartContext";
-import Products from "../assets/pages/Products";
 const Header = () => {
   const { totalItems = 0 } = useCart() || {};
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,7 +32,7 @@ const Header = () => {
             Home
           </Link>
           <Link
-            to="/products"
+            to="/product"
             className="nav-link"
             onClick={() => setMenuOpen(false)}
           >

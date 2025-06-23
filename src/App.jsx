@@ -20,6 +20,7 @@ import { CartProvider } from "./components/cartContext";
 import CheckoutPage from "./assets/pages/checkoutPage";
 import OrderConfirmation from "./assets/pages/orderConfirmatio";
 import PrivacyPolicy from "./assets/pages/privacy";
+import Product from "./assets/pages/product";
 const App = () => {
   return (
     <>
@@ -44,8 +45,9 @@ const App = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="/about" element={<About />} />
               <Route path="/blog" element={<Blog />} />
-              <Route path="/faq" element={<FAQ />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/product" element={<Product />} />
               <Route path="/checkout" element={<CheckoutPage />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
 
