@@ -77,7 +77,9 @@ const Cart = () => {
               <span>Rs {subtotal.toFixed(2)}</span>
             </div>
 
-            <button className="checkout-btn">Proceed to Checkout</button>
+            <Link to="/checkout" className="checkout">
+              Proceed to checkout
+            </Link>
             <button className="clear-cart" onClick={clearCart}>
               Clear Cart
             </button>

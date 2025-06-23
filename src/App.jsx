@@ -16,6 +16,7 @@ import Footer from "./components/footer";
 import FAQ from "./assets/pages/faq";
 import Cart from "./assets/pages/cart";
 import { CartProvider } from "./components/cartContext";
+import CheckoutPage from "./assets/pages/checkoutPage";
 const App = () => {
   return (
     <div>
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
           </Routes>
           <Footer />
         </BrowserRouter>
