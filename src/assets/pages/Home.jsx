@@ -214,7 +214,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Summer Collection Banner */}
       <motion.section
         className="summer-collection"
         initial={{ opacity: 0 }}
@@ -229,7 +228,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            Summer Vibes Collection
+            Summer Vibes Collections
           </motion.h2>
           <motion.p
             initial={{ x: 50, opacity: 0 }}
