@@ -8,11 +8,10 @@ import {
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Header from "./components/header";
+import Footer from "./components/Footer";
 import Contact from "./assets/pages/contact";
-import ReactDOM from "react-dom/client";
 import About from "./assets/pages/about";
 import Blog from "./assets/pages/blog";
-import Footer from "./components/footer";
 import FAQ from "./assets/pages/faq";
 import Home from "./assets/pages/home";
 import Cart from "./assets/pages/cart";
