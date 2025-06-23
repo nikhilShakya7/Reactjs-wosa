@@ -13,7 +13,7 @@ import Contact from "./assets/pages/contact";
 import About from "./assets/pages/about";
 import Blog from "./assets/pages/blog";
 import FAQ from "./assets/pages/faq";
-import Home from "./assets/pages/home";
+import Home from "./assets/pages/Home";
 import Cart from "./assets/pages/cart";
 import { CartProvider } from "./components/cartContext";
 import CheckoutPage from "./assets/pages/checkoutPage";
