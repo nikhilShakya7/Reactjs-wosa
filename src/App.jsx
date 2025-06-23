@@ -12,7 +12,7 @@ import Contact from "./assets/pages/contact";
 import ReactDOM from "react-dom/client";
 import About from "./assets/pages/about";
 import Blog from "./assets/pages/blog";
-import Products from "./assets/pages/Products";
+import Products from "./assets/pages/Products"; // lowercase to match your file
 import Footer from "./components/footer";
 import FAQ from "./assets/pages/faq";
 import Home from "./assets/pages/home";

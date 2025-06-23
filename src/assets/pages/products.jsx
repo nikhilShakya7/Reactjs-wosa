@@ -9,7 +9,6 @@ const Products = () => {
   const queryParams = new URLSearchParams(location.search);
   const initialCategory = queryParams.get("category") || "all";
 
-  // State management
   const [category, setCategory] = useState(initialCategory);
   const [sortOption, setSortOption] = useState("featured");
   const [priceRange, setPriceRange] = useState([0, 10000]);
