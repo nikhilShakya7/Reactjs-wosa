@@ -5,6 +5,8 @@ import {
   Route,
   BrowserRouter,
 } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Header from "./components/header";
 import Contact from "./assets/pages/contact";
 import Home from "./assets/pages/home";
@@ -20,25 +22,42 @@ import CheckoutPage from "./assets/pages/checkoutPage";
 import OrderConfirmation from "./assets/pages/orderConfirmatio";
 const App = () => {
   return (
-    <div>
-      <CartProvider>
-        <BrowserRouter>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/checkout" element={<CheckoutPage />} />
-            <Route path="/orderConfirmation" element={<OrderConfirmation />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      </CartProvider>
-    </div>
+    <>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      <div>
+        <CartProvider>
+          <BrowserRouter>
+            <Header />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/checkout" element={<CheckoutPage />} />
+              <Route
+                path="/orderConfirmation"
+                element={<OrderConfirmation />}
+              />
+            </Routes>
+            <Footer />
+          </BrowserRouter>
+        </CartProvider>
+      </div>
+    </>
   );
 };
 

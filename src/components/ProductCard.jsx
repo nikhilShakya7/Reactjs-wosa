@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import "../style/productCard.css";
 import { useCart } from "./cartContext";
+import { toast } from "react-toastify";
 
 const ProductCard = ({ product, ...motionProps }) => {
   const { addToCart } = useCart();
@@ -10,6 +11,16 @@ const ProductCard = ({ product, ...motionProps }) => {
     e.preventDefault();
     e.stopPropagation();
     addToCart(product);
+    toast.success(`${product.name} added to cart!`, {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   };
   return (
     <motion.div

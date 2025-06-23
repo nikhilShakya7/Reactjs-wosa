@@ -302,6 +302,9 @@
   color: #999;
   text-decoration: line-through;
 }
+.add-to-cart:active {
+  transform: scale(0.95);
+}
 
 .rating {
   display: flex;
@@ -335,6 +338,21 @@
 .no-results h3 {
   color: #1a1a2e;
   margin-bottom: 20px;
+}
+.Toastify__toast {
+  font-family: "Poppins", sans-serif;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.Toastify__toast--success {
+  background: #f0fdf4 !important;
+  color: #166534 !important;
+  border-left: 4px solid #22c55e !important;
+}
+
+.Toastify__progress-bar--success {
+  background: #22c55e !important;
 }
 
 /* Responsive Design */
