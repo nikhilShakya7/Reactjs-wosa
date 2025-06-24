@@ -88,7 +88,7 @@ const Footer = () => {
               <a href="/">Home</a>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <a href="products">Shop</a>
+              <a href="product">Shop</a>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
               <a href="about">About Us</a>

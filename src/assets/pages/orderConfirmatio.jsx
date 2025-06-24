@@ -63,7 +63,7 @@ const OrderConfirmation = () => {
           </p>
         </div>
 
-        <Link to="/products" className="continue-shopping">
+        <Link to="/product" className="continue-shopping">
           Continue Shopping
         </Link>
       </div>

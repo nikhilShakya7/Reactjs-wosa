@@ -45,7 +45,7 @@ const CheckoutPage = () => {
     return (
       <div className="empty-cart">
         <h2>Your cart is empty</h2>
-        <button onClick={() => navigate("/products")}>Continue Shopping</button>
+        <button onClick={() => navigate("/product")}>Continue Shopping</button>
       </div>
     );
   }
