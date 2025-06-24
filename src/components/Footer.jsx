@@ -88,19 +88,19 @@ const Footer = () => {
               <a href="/">Home</a>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <a href="product">Shop</a>
+              <a href="/product">Shop</a>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <a href="about">About Us</a>
+              <a href="/about">About Us</a>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <a href="#">Collections</a>
+              <a href="/product">Collections</a>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <a href="blog">Blog</a>
+              <a href="/blog">Blog</a>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <a href="contact">Contact</a>
+              <a href="/contact">Contact</a>
             </motion.li>
           </ul>
         </motion.div>
@@ -110,7 +110,7 @@ const Footer = () => {
           <h3 className="footer-heading">Customer Service</h3>
           <ul className="footer-links">
             <motion.li whileHover={{ x: 5 }}>
-              <a href="faq">FAQs</a>
+              <a href="/faq">FAQs</a>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
               <a href="#">Shipping Policy</a>
@@ -125,7 +125,7 @@ const Footer = () => {
               <a href="#">Payment Methods</a>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <a href="privacy">Privacy Policy</a>
+              <a href="/privacy">Privacy Policy</a>
             </motion.li>
           </ul>
         </motion.div>
