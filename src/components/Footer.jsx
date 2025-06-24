@@ -1,5 +1,6 @@
 import React from "react";
 import "../style/footer.css";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   FaFacebook,
@@ -8,7 +9,6 @@ import {
   FaPinterest,
 } from "react-icons/fa";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
-
 const Footer = () => {
   const footerVariants = {
     hidden: { opacity: 0 },
@@ -85,22 +85,19 @@ const Footer = () => {
           <h3 className="footer-heading">Quick Links</h3>
           <ul className="footer-links">
             <motion.li whileHover={{ x: 5 }}>
-              <a href="/">Home</a>
+              <Link to="/">Home</Link>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <a href="/product">Shop</a>
+              <Link to="/about">About Us</Link>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <a href="/about">About Us</a>
+              <Link to="/product">Collections</Link>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <a href="/product">Collections</a>
+              <Link to="/blog">Blog</Link>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <a href="/blog">Blog</a>
-            </motion.li>
-            <motion.li whileHover={{ x: 5 }}>
-              <a href="/contact">Contact</a>
+              <Link to="/contact">Contact</Link>
             </motion.li>
           </ul>
         </motion.div>
@@ -110,22 +107,22 @@ const Footer = () => {
           <h3 className="footer-heading">Customer Service</h3>
           <ul className="footer-links">
             <motion.li whileHover={{ x: 5 }}>
-              <a href="/faq">FAQs</a>
+              <Link to="/faq">FAQs</Link>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <a href="#">Shipping Policy</a>
+              <Link to="#">Shipping Policy</Link>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <a href="#">Returns & Exchanges</a>
+              <Link to="#">Returns & Exchanges</Link>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <a href="#">Size Guide</a>
+              <Link to="#">Size Guide</Link>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <a href="#">Payment Methods</a>
+              <Link to="#">Payment Methods</Link>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <a href="/privacy">Privacy Policy</a>
+              <Link to="/privacy">Privacy Policy</Link>
             </motion.li>
           </ul>
         </motion.div>
