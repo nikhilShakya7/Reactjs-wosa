@@ -154,7 +154,7 @@ const CheckoutPage = () => {
           <div className="order-items">
             {cart.map((item) => (
               <div key={item.id} className="order-item">
-                <img src={item.image} alt={item.name} />
+                <img src={item.images} alt={item.name} />
                 <div>
                   <h4>{item.name}</h4>
                   <p>

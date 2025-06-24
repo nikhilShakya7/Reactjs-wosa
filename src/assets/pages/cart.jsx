@@ -83,7 +83,7 @@ const Cart = () => {
             <button className="clear-cart" onClick={clearCart}>
               Clear Cart
             </button>
-            <Link to="/products" className="continue-shopping">
+            <Link to="/product" className="continue-shopping">
               Continue Shopping
             </Link>
           </div>
