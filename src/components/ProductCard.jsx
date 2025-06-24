@@ -31,7 +31,7 @@ const ProductCard = ({ product, ...motionProps }) => {
       <Link to={`/product/${product.id}`} className="product-link">
         <div className="product-image-container">
           <img
-            src={product.image}
+            src={product.images}
             alt={product.name}
             className="product-image"
           />
