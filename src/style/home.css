@@ -477,7 +477,7 @@ body {
 }
 
 /* Add to Cart Button */
-.add-to-cart-btn {
+.add-to-carts-btn {
   width: 100%;
   padding: 1rem;
   background: var(--text-dark);

@@ -251,7 +251,7 @@ const Home = () => {
                     </span>
                   </div>
                   <motion.button
-                    className="add-to-cart-btn"
+                    className="add-to-carts-btn"
                     whileHover={{
                       backgroundColor: "#e94560",
                       boxShadow: "0 5px 15px rgba(233, 69, 96, 0.4)",
