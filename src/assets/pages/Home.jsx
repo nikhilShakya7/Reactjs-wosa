@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Product from "./product";
@@ -47,6 +47,70 @@ const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const testimonialRef = useRef(null);
+
+  const scrollTestimonials = (direction) => {
+    if (testimonialRef.current) {
+      const scrollAmount = direction === "left" ? -300 : 300;
+      testimonialRef.current.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+  const [isPaused, setIsPaused] = useState(false);
+
+  const originalTestimonials = [
+    {
+      id: 1,
+      quote:
+        "The quality exceeded my expectations! The dress fits perfectly and the fabric is so comfortable.",
+      author: "Sarah Johnson",
+      role: "Frequent Shopper",
+      image: testimonial1,
+    },
+    {
+      id: 2,
+      quote:
+        "I've never received so many compliments on a t-shirt before. Will definitely be ordering more!",
+      author: "Michael Chen",
+      role: "First-time Customer",
+      image: testimonial2,
+    },
+    {
+      id: 3,
+      quote:
+        "Their customer service is outstanding. Helped me exchange sizes quickly when I needed a different fit.",
+      author: "Emma Rodriguez",
+      role: "Loyal Customer",
+      image: "https://randomuser.me/api/portraits/women/65.jpg",
+    },
+    {
+      id: 4,
+      quote:
+        "Fast shipping and perfect packaging. The jeans fit exactly as described on the size chart.",
+      author: "David Wilson",
+      role: "Verified Buyer",
+      image: "https://randomuser.me/api/portraits/men/75.jpg",
+    },
+    {
+      id: 5,
+      quote:
+        "The summer collection is amazing! Lightweight fabrics perfect for hot weather.",
+      author: "Priya Patel",
+      role: "Seasonal Shopper",
+      image: "https://randomuser.me/api/portraits/women/33.jpg",
+    },
+    {
+      id: 6,
+      quote:
+        "Great value for money. I've purchased multiple items and they've all held up well after many washes.",
+      author: "James Taylor",
+      role: "Repeat Customer",
+      image: "https://randomuser.me/api/portraits/men/42.jpg",
+    },
+  ];
+  const testimonials = [...originalTestimonials, ...originalTestimonials];
 
   return (
     <div className="home-container">
@@ -264,6 +328,65 @@ const Home = () => {
             className="summer-img"
           />
           <div className="summer-overlay"></div>
+        </div>
+      </motion.section>
+      <motion.section
+        className="testimonial-carousel"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="testimonial-header">
+          <motion.h2
+            className="testimonial-title"
+            initial={{ y: -20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            Customer Love
+          </motion.h2>
+          <motion.p
+            className="testimonial-subtitle"
+            initial={{ y: -20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Hear what our happy customers say about us
+          </motion.p>
+        </div>
+
+        <div
+          className="testimonial-track-container"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <div
+            className="testimonial-track"
+            style={{ animationPlayState: isPaused ? "paused" : "running" }}
+          >
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={`${testimonial.id}-${index}`}
+                className="testimonial-card"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.author}
+                  className="testimonial-image"
+                />
+                <p className="testimonial-content">"{testimonial.quote}"</p>
+                <h4 className="testimonial-author">{testimonial.author}</h4>
+                <p className="testimonial-role">{testimonial.role}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </motion.section>
     </div>
