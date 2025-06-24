@@ -13,6 +13,7 @@ import Contact from "./assets/pages/contact";
 import About from "./assets/pages/about";
 import Blog from "./assets/pages/blog";
 import FAQ from "./assets/pages/faq";
+import CommingSoon from "./assets/pages/commingSoon";
 import Home from "./assets/pages/Home";
 import Cart from "./assets/pages/cart";
 import { CartProvider } from "./components/cartContext";
@@ -41,6 +42,7 @@ const App = () => {
             <Header />
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/commingSoon" element={<CommingSoon />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/about" element={<About />} />
               <Route path="/blog" element={<Blog />} />

@@ -109,7 +109,7 @@ const Home = () => {
               transition={{ delay: index * 0.2, duration: 0.6 }}
             >
               <Link
-                to={`/product/${category.name.toLowerCase()}`}
+                to="/commingSoon"
                 className="category-card"
                 style={{
                   backgroundImage: `url(${category.image})`,
