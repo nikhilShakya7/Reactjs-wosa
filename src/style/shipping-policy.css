@@ -1,0 +1,83 @@
+.shipping-policy-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.shipping-policy-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.shipping-policy-header h1 {
+  font-size: 2.5rem;
+  color: #2a3a5e;
+  margin-bottom: 1rem;
+}
+
+.shipping-policy-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.policy-section {
+  margin-bottom: 3rem;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.policy-section h2 {
+  font-size: 1.8rem;
+  color: #2a3a5e;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.policy-section h2 svg {
+  min-width: 30px;
+}
+
+.policy-item {
+  margin-bottom: 1.5rem;
+}
+
+.policy-item h3 {
+  font-size: 1.2rem;
+  color: #4e3a5e;
+  margin-bottom: 0.5rem;
+}
+
+.policy-item p {
+  line-height: 1.6;
+  color: #555;
+}
+
+.policy-item ul {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.policy-item li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .shipping-policy-container {
+    padding: 1rem;
+  }
+
+  .policy-section {
+    padding: 1.5rem;
+  }
+
+  .shipping-policy-header h1 {
+    font-size: 2rem;
+  }
+}

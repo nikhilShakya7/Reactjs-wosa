@@ -110,7 +110,7 @@ const Footer = () => {
               <Link to="/faq">FAQs</Link>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
-              <Link to="#">Shipping Policy</Link>
+              <Link to="/shippingPolicy">Shipping Policy</Link>
             </motion.li>
             <motion.li whileHover={{ x: 5 }}>
               <Link to="#">Returns & Exchanges</Link>

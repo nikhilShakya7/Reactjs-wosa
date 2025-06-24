@@ -22,6 +22,7 @@ import OrderConfirmation from "./assets/pages/orderConfirmatio";
 import PrivacyPolicy from "./assets/pages/privacy";
 import Product from "./assets/pages/product";
 import ScrollToTop from "./components/ScrollToTop";
+import ShippingPolicy from "./assets/pages/shippingPolicy";
 const App = () => {
   return (
     <>
@@ -53,7 +54,7 @@ const App = () => {
               <Route path="/product" element={<Product />} />
               <Route path="/checkout" element={<CheckoutPage />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
-
+              <Route path="/shippingPolicy" element={<ShippingPolicy />} />
               <Route
                 path="/orderConfirmation"
                 element={<OrderConfirmation />}
