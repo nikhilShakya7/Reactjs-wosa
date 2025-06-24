@@ -21,6 +21,7 @@ import CheckoutPage from "./assets/pages/checkoutPage";
 import OrderConfirmation from "./assets/pages/orderConfirmatio";
 import PrivacyPolicy from "./assets/pages/privacy";
 import Product from "./assets/pages/product";
+import ScrollToTop from "./components/ScrollToTop";
 const App = () => {
   return (
     <>
@@ -39,6 +40,7 @@ const App = () => {
       <div>
         <CartProvider>
           <BrowserRouter>
+            <ScrollToTop />
             <Header />
             <Routes>
               <Route path="/" element={<Home />} />
