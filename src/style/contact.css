@@ -126,6 +126,10 @@
   font-size: 0.95rem;
   line-height: 1.5;
 }
+.error {
+  color: red;
+  font-size: small;
+}
 
 /* Contact Form */
 .contact-form-container {

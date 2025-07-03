@@ -1,56 +1,34 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { schema } from "../../backend/validation";
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from "react-icons/fa";
-//import Header from "../../components/header";
-//import Footer from "../../components/footer";
 import "../../style/contact.css";
-const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
+const Contact = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm({ resolver: yupResolver(schema) });
+
   const [submitStatus, setSubmitStatus] = useState(null);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
+  const onSubmit = (data) => {
     emailjs
-      .send(
-        "service_6yofzip",
-        "template_fk5h9f7",
-        formData,
-        "OUct0zR11leVWOEH-"
-      )
+      .send("service_6yofzip", "template_fk5h9f7", data, "OUct0zR11leVWOEH-")
       .then(
-        (result) => {
-          console.log(result.text);
+        () => {
           setSubmitStatus("success");
-          setFormData({
-            name: "",
-            email: "",
-            subject: "",
-            message: "",
-          });
+          reset();
         },
-        (error) => {
-          console.log(error.text);
+        () => {
           setSubmitStatus("error");
         }
-      )
-      .finally(() => setIsSubmitting(false));
+      );
   };
 
   return (
@@ -81,9 +59,8 @@ const Contact = () => {
         </div>
       </motion.section>
 
-      {/* Main Content */}
+      {/* Contact Info */}
       <div className="contact-container">
-        {/* Contact Info */}
         <motion.div
           className="contact"
           initial={{ x: -50, opacity: 0 }}
@@ -96,7 +73,6 @@ const Contact = () => {
             Have questions about our products or need assistance? Reach out
             through any of these channels:
           </p>
-
           <div className="info-grid">
             <div className="info-card">
               <div className="info-icon">
@@ -109,7 +85,6 @@ const Contact = () => {
                 Style District, SC 12345
               </p>
             </div>
-
             <div className="info-card">
               <div className="info-icon">
                 <FaPhone />
@@ -121,7 +96,6 @@ const Contact = () => {
                 Mon-Fri: 9am-6pm
               </p>
             </div>
-
             <div className="info-card">
               <div className="info-icon">
                 <FaEnvelope />
@@ -133,7 +107,6 @@ const Contact = () => {
                 support@vasah.com
               </p>
             </div>
-
             <div className="info-card">
               <div className="info-icon">
                 <FaClock />
@@ -157,57 +130,53 @@ const Contact = () => {
           viewport={{ once: true }}
         >
           <h2>Send Us a Message</h2>
-          <form onSubmit={handleSubmit} className="contact-form">
+          <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
             <div className="form-group">
               <label htmlFor="name">Full Name</label>
               <input
-                type="text"
                 id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
+                type="text"
                 placeholder="Enter your name"
+                {...register("name")}
               />
+              {errors.name && <p className="error">{errors.name.message}</p>}
             </div>
 
             <div className="form-group">
               <label htmlFor="email">Email Address</label>
               <input
-                type="email"
                 id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
+                type="email"
                 placeholder="Enter your email"
+                {...register("email")}
               />
+              {errors.email && <p className="error">{errors.email.message}</p>}
             </div>
 
             <div className="form-group">
               <label htmlFor="subject">Subject</label>
               <input
-                type="text"
                 id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                required
+                type="text"
                 placeholder="What's this about?"
+                {...register("subject")}
               />
+              {errors.subject && (
+                <p className="error">{errors.subject.message}</p>
+              )}
             </div>
 
             <div className="form-group">
               <label htmlFor="message">Your Message</label>
               <textarea
                 id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
                 rows="5"
                 placeholder="Type your message here..."
+                {...register("message")}
               ></textarea>
+              {errors.message && (
+                <p className="error">{errors.message.message}</p>
+              )}
             </div>
 
             <button
@@ -227,11 +196,20 @@ const Contact = () => {
                 Thank you! Your message has been sent successfully.
               </motion.div>
             )}
+            {submitStatus === "error" && (
+              <motion.div
+                className="error-message"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+              >
+                Oops! Something went wrong. Please try again.
+              </motion.div>
+            )}
           </form>
         </motion.div>
       </div>
 
-      {/* Map Section */}
+      {/* Map */}
       <div className="map-container">
         <iframe
           title="Our Location"
@@ -239,7 +217,7 @@ const Contact = () => {
           width="100%"
           height="450"
           style={{ border: 0 }}
-          allowFullScreen=""
+          allowFullScreen
           loading="lazy"
         ></iframe>
       </div>
