@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { color, motion } from "framer-motion";
 import "../../style/Products.css";
 import products from "../../data/products";
 import { Link, useLocation } from "react-router-dom";
@@ -8,12 +8,48 @@ const Product = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const initialCategory = queryParams.get("category") || "all";
-
   const [category, setCategory] = useState(initialCategory);
   const [sortOption, setSortOption] = useState("featured");
   const [priceRange, setPriceRange] = useState([0, 10000]);
   const [selectedColors, setSelectedColors] = useState([]);
   const [selectedSizes, setSelectedSizes] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:1337/api/products?populate=*"
+        );
+
+        if (!response.ok) {
+          console.log("failed to fetch");
+        }
+        const data = await response.json();
+        console.log(data);
+        const productsArray = data.data[0]?.product || [];
+
+        const formattedProducts = productsArray.map((item) => ({
+          id: item.id,
+          name: item.name,
+          price: item.price,
+          originalPrice: item.originalPrice,
+          images: item.images,
+          category: item.category,
+          colors: item.colors,
+          sizes: item.sizes,
+          isNew: item.isNew,
+          rating: item.rating,
+        }));
+        setProducts(formattedProducts);
+      } catch (err) {
+        console.log("Error", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProducts();
+  }, []);
   const filteredProducts = products
     .filter(
       (product) =>
